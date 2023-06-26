@@ -1,0 +1,30 @@
+#menu{
+    background-color: black;
+    color: white;
+    height: 70px;
+    align-items: center;
+    font-size: 17px;
+}
+#deneme{
+    background-color: rgb(187, 3, 3);
+    align-items: end;
+    font-weight: 600;
+}
+#login{
+    margin-left: 1000px;
+}
+#bulutMD{
+    margin-left: 50px;
+    font-size: 35px;
+}
+
+
+#titleMenu{
+    background-color: rgb(71, 71, 71);
+    color:white;
+}
+#titles{
+    margin-left: 50px;
+    font-size: 30px;
+}
+
