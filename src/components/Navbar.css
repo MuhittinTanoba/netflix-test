@@ -7,7 +7,6 @@
 }
 #deneme{
     background-color: rgb(187, 3, 3);
-    align-items: end;
     font-weight: 600;
 }
 #login{
@@ -24,7 +23,9 @@
     color:white;
 }
 #titles{
+    margin: 5px;
     margin-left: 50px;
     font-size: 30px;
+    font-weight: 300;
 }
 
