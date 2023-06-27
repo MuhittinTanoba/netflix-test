@@ -21,6 +21,9 @@ const items = [
 
 
 const Navbar = () => {
+    // Ant Design menu yapısı kullanılarak navigation bar yapılmıştır.
+    // Mode - Yatay veya dikey seçme parametresi
+    // Items - Navigation bar'da bulunacak öğelerin listesi
     return <div>
         <Menu id="menu"
             mode="horizontal"

@@ -1,5 +1,7 @@
 import React from "react";
 import './Footer.css'
+
+//icon (twitter facebook logo)
 import { TwitterOutlined, FacebookFilled } from '@ant-design/icons'
 
 
@@ -12,7 +14,7 @@ const Footer = () => {
                     Anasayfa | Kullanıcı Sözleşmesi | Gizlilik Sözleşmesi
                 </div>
                 <div className="row">
-                <FacebookFilled height={"2em"} width={"2em"}></FacebookFilled> <TwitterOutlined /> 
+                    <FacebookFilled></FacebookFilled> <TwitterOutlined /> 
                 </div>
             </div>
         </div>

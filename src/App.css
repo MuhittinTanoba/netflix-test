@@ -33,6 +33,12 @@
   color: white;
 }
 
+#Card{
+  margin-top: 3em;
+  margin-left: 3em;
+
+}
+
 .App-link {
   color: #61dafb;
 }
