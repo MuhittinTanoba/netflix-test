@@ -1,5 +1,4 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
 import "antd/dist/antd.js";
 import "./App.css";
 import Navbar from "./components/Navbar";
@@ -9,6 +8,7 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home.js";
 import { Movies } from "./pages/Movies";
 import { Series } from "./pages/Series";
+import FetchData from "./FetchData";
 
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
     <div className="page-container">
       <div className="content-wrap">
         <Navbar />
+
 
         <Routes>
           <Route path="/" element={<Home /> } />
