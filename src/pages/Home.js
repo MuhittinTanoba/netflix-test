@@ -9,6 +9,7 @@ export function Home() {
   return (
     <>
       <Row gutter={[16, 16]}>
+        {/* Film Kartı */}
         <Link to="/Movies">
           <Col span={6}>
             {" "}
@@ -21,7 +22,7 @@ export function Home() {
               cover={
                 <img
                   alt="example"
-                  src="https://upload.wikimedia.org/wikipedia/en/1/12/Catching-Fire_poster.jpg"
+                  src="https://upload.wikimedia.org/wikipedia/tr/9/98/John_Wick_TeaserPoster.jpg"
                 />
               }
             >
@@ -30,6 +31,7 @@ export function Home() {
           </Col>
         </Link>
 
+        {/* Dizi Kartı */}
         <Link to="/Series">
           <Col span={6}>
             {" "}

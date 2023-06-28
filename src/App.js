@@ -17,7 +17,8 @@ function App() {
       <div className="content-wrap">
         <Navbar />
 
-
+        <FetchData/>
+        {/* Anasayfadan dizi veya film sayfasına yönlendirme */}
         <Routes>
           <Route path="/" element={<Home /> } />
           <Route path="/movies" element={<Movies /> } />
