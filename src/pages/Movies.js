@@ -1,5 +1,7 @@
 import { Row, Col, Card } from "antd";
 import { dataMovies } from "../FetchData";
+import { Link } from "react-router-dom";
+import SearchSort from "../components/SearchSort";
 
 const { Meta } = Card;
 
@@ -12,7 +14,9 @@ export function Movies() {
 
   // filmlerin card'larını oluşturan array
   const movieCards = dataMovies.map((movie, index) => (
+    <Link to="/Movies">
     <Col span={6}>
+      {" "}
       <Card
         id="Card"
         style={{
@@ -23,10 +27,12 @@ export function Movies() {
         <Meta title={movieTitles[index]} />
       </Card>
     </Col>
+    </Link>
   ));
 
   return (
     <>
+      <SearchSort/>
       <Row gutter={[8, 8]}>
         {movieCards}
       </Row>

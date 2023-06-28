@@ -3,20 +3,21 @@ import "./Navbar.css";
 
 const items = [
   {
-    label: "BulutMD",
-    key: "bulutMD",
+    label: (
+      <a href="/">
+        BulutMD
+      </a>
+    ),
     id: "bulutMD",
   },
 ];
 const items2 = [
   {
     label: "Giriş",
-    key: "login",
     id: "login",
   },
   {
     label: "Deneme Başlat",
-    key: "deneme",
     id: "deneme",
   },
 ];
@@ -36,7 +37,8 @@ const Navbar = () => {
         label: "Popüler Başlıklar",
         id: "title"
       }
-    ]}>
+    ]}
+    >
     </Menu>
     </>
   );

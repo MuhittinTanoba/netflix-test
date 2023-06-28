@@ -1,5 +1,6 @@
 import { dataSeries } from "../FetchData"
 import { Row, Col, Card } from "antd";
+import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 
@@ -13,6 +14,7 @@ export function Series(){
 
   // dizilerin card'larını oluşturan array
   const serieCards = dataSeries.map((movie, index) => (
+    <Link to="/Series">
     <Col span={6}>
       <Card
         id="Card"
@@ -24,6 +26,7 @@ export function Series(){
         <Meta title={serieTitles[index]} />
       </Card>
     </Col>
+    </Link>
   ));
 
 
