@@ -1,32 +1,35 @@
 import { DownOutlined } from "@ant-design/icons";
-import { Dropdown, Space, Input, Row, Col } from "antd";
-import './SearchSort.css';
+import { Dropdown, Space, Input, Row, Col, Button } from "antd";
+import "./SearchSort.css";
 
 const { Search } = Input;
 
-/* Dropdown'a gönderilecek değerler */
-const items = [
-  {
-    key: "1",
-    label: "Yeniye Göre Sırala",
-  },
-  {
-    key: "2",
-    label: "Eskiye Göre Sırala",
-  },
-  {
-    key: "3",
-    label: "Puana Göre Sırala",
-  },
-  {
-    key: "4",
-    label: "Rastgele Sırala",
-  },
-];
+function SearchSort({ onChangeHandler, sortByDate, shuffleMovies, sortByDateAsc }) {
 
+  /* Dropdown'a gönderilecek değerler */
+  const items = [
+    {
+      key: "1",
+      label: (
+        <Button type="text" onClick={sortByDate}>
+          Yeniye Göre Sırala
+        </Button>
+      ),
+    },
+    {
+      key: "2",
+      label: <Button type="text" onClick={sortByDateAsc}>Eskiye Göre Sırala</Button>,
+    },
+    {
+      key: "3",
+      label: <Button type="text">Puana Göre Sırala</Button>,
+    },
+    {
+      key: "4",
+      label: <Button type="text" onClick={shuffleMovies}>Rastgele Sırala </Button>,
+    },
+  ];
 
-function SearchSort({onChangeHandler}) {
-  
   return (
     <>
       <Row id="input-dropdown-row">
@@ -46,12 +49,12 @@ function SearchSort({onChangeHandler}) {
               items,
             }}
           >
-            <button id="sort-text" onClick={(e) => e.preventDefault()}>
+            <a id="sort-text" onClick={(e) => e.preventDefault()}>
               <Space>
                 Sırala
                 <DownOutlined />
               </Space>
-            </button>
+            </a>
           </Dropdown>
         </Col>
       </Row>
