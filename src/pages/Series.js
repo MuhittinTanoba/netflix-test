@@ -1,19 +1,26 @@
 import { dataSeries } from "../FetchData"
 import { Row, Col, Card } from "antd";
 import { Link } from "react-router-dom";
+import SearchSort from "../components/SearchSort";
+import {useState} from 'react';
 
 const { Meta } = Card;
 
 
 export function Series(){
-  // resimlerin url'lerini bulunduran array
-  const serieImages = dataSeries.map((movie) => movie.images["Poster Art"].url);
+  const [searchText, setSearchText] = useState('');
+  console.log(searchText);
 
-  // dizilerin title'lerini bulunduran array
-  const serieTitles = dataSeries.map((movie) => movie.title);
 
   // dizilerin card'larını oluşturan array
-  const serieCards = dataSeries.map((movie, index) => (
+  // filter fonksiyonu ile arama yapılır
+  const serieCards = dataSeries
+  .filter((serie) => {
+    return searchText.toLowerCase() === ""
+    ? serie
+    : serie.title.toLowerCase().includes(searchText);
+  })
+  .map((serie) => (
     <Link to="/Series">
     <Col span={6}>
       <Card
@@ -21,9 +28,9 @@ export function Series(){
         style={{
           width: 240,
         }}
-        cover={<img alt="example" src={serieImages[index]} />}
+        cover={<img alt="example" src={serie.images["Poster Art"].url} />}
       >
-        <Meta title={serieTitles[index]} />
+        <Meta title={serie.title} />
       </Card>
     </Col>
     </Link>
@@ -32,6 +39,8 @@ export function Series(){
 
     return(
         <>
+        {/* SearchSort componentinin onChangeHandler'i ile input'a yazılan değerleri searchtext isimli değişkene atar */}
+        <SearchSort onChangeHandler={(e) => setSearchText(e.target.value)}/>
         <Row gutter={[8, 8]}>
           {serieCards}
         </Row>

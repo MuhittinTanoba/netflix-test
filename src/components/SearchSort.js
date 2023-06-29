@@ -1,9 +1,10 @@
-import { DownOutlined, SmileOutlined } from "@ant-design/icons";
+import { DownOutlined } from "@ant-design/icons";
 import { Dropdown, Space, Input, Row, Col } from "antd";
 import './SearchSort.css';
 
 const { Search } = Input;
 
+/* Dropdown'a gönderilecek değerler */
 const items = [
   {
     key: "1",
@@ -22,12 +23,17 @@ const items = [
     label: "Rastgele Sırala",
   },
 ];
-function SearchSort() {
+
+
+function SearchSort({onChangeHandler}) {
+  
   return (
     <>
       <Row id="input-dropdown-row">
         <Col span={8}>
           <Search
+            /* input'a yazacağımız değeri searchtext değişkenine atıyoruz */
+            onChange={onChangeHandler}
             placeholder="Film / Dizi / Oyuncu ara"
             style={{ width: 250 }}
           />
@@ -40,12 +46,12 @@ function SearchSort() {
               items,
             }}
           >
-            <a id="sort-text" onClick={(e) => e.preventDefault()}>
+            <button id="sort-text" onClick={(e) => e.preventDefault()}>
               <Space>
                 Sırala
                 <DownOutlined />
               </Space>
-            </a>
+            </button>
           </Dropdown>
         </Col>
       </Row>
